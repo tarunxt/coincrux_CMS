@@ -32,12 +32,17 @@ export const NewsCollection = buildCollection<News>({
   properties: {
     coinHeading: {
       name: "Title",
-      validation: { required: true },
-      dataType: "string",
+      validation: { required: true, max: 20, min: 5,     
+                   requiredMessage: "You must set a price between 5 and 20",
     },
+      dataType: "string",
+      //add limit of inputs 
+
+      },
     coinDescription: {
       name: "Summary",
-      validation: { required: true },
+      validation: { required: true , max: 1000, min: 150, 
+                   requiredMessage: "You must set a price between 150 and 1000",},
       dataType: "string",
       columnWidth: 500,
     },
@@ -91,11 +96,6 @@ export const NewsCollection = buildCollection<News>({
           "Altcoins": "Altcoins"
       },
     },
-
-      ui: {
-        widget: "select",
-        showEnumIcon: true,
-      },
   }),
   
   
@@ -123,7 +123,7 @@ export const NewsCollection = buildCollection<News>({
       dataType: "string",
       enumValues: {
         Samridhi: "Samridhi Jain",
-        Yash: "Yash Jain",
+        Yash: "Yash Sonu",
         Noopur: "Noopur Kumari",
         Samiksha: "Samiksha Dhaka",
         Anushka: "Ansuhka Verma",
