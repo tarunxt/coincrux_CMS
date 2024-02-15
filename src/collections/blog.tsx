@@ -1,5 +1,6 @@
-import { EnumValues, buildCollection, buildProperty } from "firecms";
+import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
+
 
 // Define the News type
 type News = {
@@ -16,6 +17,8 @@ type News = {
   totalLikes: string[];
 };
 
+
+
 export const NewsCollection = buildCollection<News>({
   name: "News",
   singularName: "News",
@@ -30,22 +33,37 @@ export const NewsCollection = buildCollection<News>({
   }),
   subcollections: [localeCollection],
   properties: {
-    coinHeading: {
-      name: "Title",
-      validation: { required: true, max: 20, min: 5,     
-                   requiredMessage: "You must set a price between 5 and 20",
-    },
-      dataType: "string",
-      //add limit of inputs 
+      coinHeading: {
+        name: "Title",
+        description: "Title should be between 5 and 80 characters",
 
+        validation: {
+          requiredMessage: "You must set a price between 5 and 80",
+          max: 80,
+          min: 5,
+          required: true,
+          maxMessage: "You must set a price between 5 and 80",
+
+
+        },
+        disabled: false,
+
+        dataType: "string",
       },
-    coinDescription: {
+    coinDescription:buildProperty( {
       name: "Summary",
-      validation: { required: true , max: 1000, min: 150, 
-                   requiredMessage: "You must set a price between 150 and 1000",},
+      description: "Summary should be between 150 and 500 characters",
+
+      validation: { 
+        required: true , 
+        max: 500, 
+        min: 150, 
+        requiredMessage: "You must set a price between 150 and 500",
+        maxMessage: "You must set a price between 150 and 500",},
       dataType: "string",
-      columnWidth: 500,
-    },
+      columnWidth: 1000,
+    }),
+
     coinImage: buildProperty({
       name: "Image",
       dataType: "string",
@@ -95,6 +113,15 @@ export const NewsCollection = buildCollection<News>({
           "Legal": "Legal",
           "Altcoins": "Altcoins"
       },
+      description: "Select the category",
+            columnWidth: 1000,
+ui:{
+  widget: "select",
+    
+  
+
+}
+
     },
   }),
   
