@@ -1,5 +1,6 @@
 import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
+import CustomColorTextField from "./CustomColorTextField.tsx";
 
 
 // Define the News type
@@ -35,33 +36,39 @@ export const NewsCollection = buildCollection<News>({
   properties: {
       coinHeading: {
         name: "Title",
-        description: "Title should be between 5 and 80 characters",
+        description: "Title should be between 50 and 100 characters",
 
         validation: {
-          requiredMessage: "You must set a price between 5 and 80",
-          max: 80,
-          min: 5,
+          requiredMessage: "You must set a price between 50 and 100",
+          max: 150,
+          min: 50,
           required: true,
-          maxMessage: "You must set a price between 5 and 80",
+          maxMessage: "You must set a price between 50 and 100",
+          
 
 
         },
+        Field: CustomColorTextField,
+        customProps: { minValue: 50, maxValue: 150},
+
         disabled: false,
+        
 
         dataType: "string",
       },
     coinDescription:buildProperty( {
       name: "Summary",
       description: "Summary should be between 150 and 500 characters",
-
       validation: { 
         required: true , 
-        max: 500, 
+
+        max: 650, 
         min: 150, 
-        requiredMessage: "You must set a price between 150 and 500",
-        maxMessage: "You must set a price between 150 and 500",},
+      },
       dataType: "string",
-      columnWidth: 1000,
+      Field: CustomColorTextField,
+      customProps: { minValue: 150, maxValue: 650 },
+      
     }),
 
     coinImage: buildProperty({
@@ -73,16 +80,13 @@ export const NewsCollection = buildCollection<News>({
         acceptedFiles: ["image/*"],
       },
     }),
-    category: buildProperty({
+    category: 
+    buildProperty({
       name: 'Category',
       validation: { required: true },
       dataType: "array",
       of: {
         dataType: "string",
-      
-  
-      
-     
       enumValues: {
           "Banking": "Banking",
           "Economy": "Economy",
@@ -100,7 +104,6 @@ export const NewsCollection = buildCollection<News>({
           "Ethereum": "Ethereum",
           "Analytics": "Analytics",
           "Exchange": "Exchange",
-          // "Markets": "Markets",
           "Metaverse": "Metaverse",
           "Blockchain": "Blockchain",
           "GameFi": "GameFi",
@@ -108,21 +111,21 @@ export const NewsCollection = buildCollection<News>({
           "Others": "Others",
           "Mining": "Mining",
           "Security": "Security",
-          // "Economy": "Economy",
           "World": "World",
           "Legal": "Legal",
-          "Altcoins": "Altcoins"
+          "Altcoins": {
+            id: "Altcoins",
+            label: "Altcoins",disabled: true,
+          },
+          
+                    // "Markets": "Markets",
+
+                    // "Economy": "Economy",
+
       },
-      description: "Select the category",
-            columnWidth: 1000,
-ui:{
-  widget: "select",
-    
-  
 
 }
-
-    },
+  ,
   }),
   
   
@@ -150,7 +153,7 @@ ui:{
       dataType: "string",
       enumValues: {
         Samridhi: "Samridhi Jain",
-        Yash: "Yash Sonu",
+        Yash: "Yash Soni",
         Noopur: "Noopur Kumari",
         Samiksha: "Samiksha Dhaka",
         Anushka: "Ansuhka Verma",
