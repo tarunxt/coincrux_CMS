@@ -43,7 +43,6 @@ export const NewsCollection = buildCollection<News>({
           max: 150,
           min: 50,
           required: true,
-          maxMessage: "You must set a price between 50 and 100",
           
 
 
