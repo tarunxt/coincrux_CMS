@@ -13,7 +13,6 @@ const CustomColorTextField: React.FC<FieldProps<string, CustomColorTextFieldProp
     value,
     setValue,
     customProps,
-    error,
 }) => {
     const [charCount, setCharCount] = useState<number>(value?.length || 0);
     

@@ -12,6 +12,12 @@
           "-webkit-text-size-adjust"
         ]
       }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
     ]
   }
 }
