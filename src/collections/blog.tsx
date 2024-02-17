@@ -1,7 +1,6 @@
 import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
 import CustomColorTextField from "./CustomColorTextField.tsx";
-import CustomCategoryField from "./CustomFieldCategory.tsx";
 
 
 // Define the News type
@@ -17,7 +16,6 @@ type News = {
   totalDislikes: string[];
   totalLikes: string[];
   createdAt: Date;
-  checked: string[];
 
 };
 
@@ -73,130 +71,131 @@ export const NewsCollection = buildCollection<News>({
       },
     }),
     
-    category: buildProperty({
+    category: {
       name: 'Category',
-      dataType: "array",
       validation: { required: true },
-
+      dataType: "array",
       of: {
           dataType: "string",
           enumValues: {
-            "Banking": {
-              id: "Banking",
-              label: "Banking",
-            },
-            "Economy": {
-              id: "Economy",
-              label: "Economy",
-            },
-            "Environment": {
-              id: "Environment",
-              label: "Environment",
-            },
-            "Industry": {
-              id: "Industry",
-              label: "Industry",
-            },
-            "Infra": {
-              id: "Infra",
-              label: "Infra",
-            },
-            "IPO": {
-              id: "IPO",
-              label: "IPO",
-            },
-            "Markets": {
-              id: "Markets",
-              label: "Markets",
-            },
-            "Politics": {
-              id: "Politics",
-              label: "Politics",
-            },
-            "Science": {
-              id: "Science",
-              label: "Science",
-            },
-            "Sports": {
-              id: "Sports",
-              label: "Sports",
-            },
-            "Stats": {
-              id: "Stats",
-              label: "Stats",
-            },
-            "Wealth": {
-              id: "Wealth",
-              label: "Wealth",
-            },
-            "Bitcoin": {
-              id: "Bitcoin",
-              label: "Bitcoin",
-            },
-            "Ethereum": {
-              id: "Ethereum",
-              label: "Ethereum",
-            },
-            "Analytics": {
-              id: "Analytics",
-              label: "Analytics",
-            },
-            "Exchange": {
-              id: "Exchange",
-              label: "Exchange",
-            },
-            "Metaverse": {
-              id: "Metaverse",
-              label: "Metaverse",
-            },
-            "Blockchain": {
-              id: "Blockchain",
-              label: "Blockchain",
-            },
-            "GameFi": {
-              id: "GameFi",
-              label: "GameFi",
-            },
-            "Finance": {
-              id: "Finance",
-              label: "Finance",
-            },
-            "Others": {
-              id: "Others",
-              label: "Others",
-            },
-            "Mining": {
-              id: "Mining",
-              label: "Mining",
-            },
-            "Security": {
-              id: "Security",
-              label: "Security",
-            },
-            "World": {
-              id: "World",
-              label: "World",
-            },
-            "Legal": {
-              id: "Legal",
-              label: "Legal",
-            },
-            "Altcoins": {
-              id: "Altcoins",
-              label: "Altcoins",
-            }
-          },
-          columnWidth: 2,
-          // decrease the width of the select
+  "Banking": {
+    id: "Banking",
+    label: "Banking",
+  },
+  "Economy": {
+    id: "Economy",
+    label: "Economy",
+  },
+  "Environment": {
+    id: "Environment",
+    label: "Environment",
+  },
+  "Industry": {
+    id: "Industry",
+    label: "Industry",
+  },
+  "Infra": {
+    id: "Infra",
+    label: "Infra",
+  },
+  "IPO": {
+    id: "IPO",
+    label: "IPO",
+  },
+  "Markets": {
+    id: "Markets",
+    label: "Markets",
+  },
+  "Politics": {
+    id: "Politics",
+    label: "Politics",
+  },
+  "Science": {
+    id: "Science",
+    label: "Science",
+  },
+  "Sports": {
+    id: "Sports",
+    label: "Sports",
+  },
+  "Stats": {
+    id: "Stats",
+    label: "Stats",
+  },
+  "Wealth": {
+    id: "Wealth",
+    label: "Wealth",
+  },
+  "Bitcoin": {
+    id: "Bitcoin",
+    label: "Bitcoin",
+  },
+  "Ethereum": {
+    id: "Ethereum",
+    label: "Ethereum",
+  },
+  "Analytics": {
+    id: "Analytics",
+    label: "Analytics",
+  },
+  "Exchange": {
+    id: "Exchange",
+    label: "Exchange",
+  },
+  "Metaverse": {
+    id: "Metaverse",
+    label: "Metaverse",
+  },
+  "Blockchain": {
+    id: "Blockchain",
+    label: "Blockchain",
+  },
+  "GameFi": {
+    id: "GameFi",
+    label: "GameFi",
+  },
+  "Finance": {
+    id: "Finance",
+    label: "Finance",
+  },
+  "Others": {
+    id: "Others",
+    label: "Others",
+  },
+  "Mining": {
+    id: "Mining",
+    label: "Mining",
+  },
+  "Security": {
+    id: "Security",
+    label: "Security",
+  },
+  "World": {
+    id: "World",
+    label: "World",
+  },
+  "Legal": {
+    id: "Legal",
+    label: "Legal",
+  },
+  "Altcoins": {
+    id: "Altcoins",
+    label: "Altcoins",
+  }
+}
 
          
       },
-      columnWidth: 2,
-
-      // decrease the width of the select
+  },
 
       
-  }),
+
+
+
+
+  
+  
+
     assetName: buildProperty({
       name: "Asset Name",
       validation: { required: true },
