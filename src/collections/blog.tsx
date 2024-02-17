@@ -112,15 +112,8 @@ export const NewsCollection = buildCollection<News>({
           "Security": "Security",
           "World": "World",
           "Legal": "Legal",
-          "Altcoins": {
-            id: "Altcoins",
-            label: "Altcoins",disabled: true,
-          },
-          
-                    // "Markets": "Markets",
-
-                    // "Economy": "Economy",
-
+          "Altcoins": "Altcoins",
+                    // "Markets": "Markets",           // "Economy": "Economy",
       },
 
 }
@@ -147,11 +140,29 @@ export const NewsCollection = buildCollection<News>({
       validation: { required: true },
       dataType: "string",
       enumValues: {
-        Samridhi: "Samridhi Jain",
-        Yash: "Yash Soni",
-        Noopur: "Noopur Kumari",
-        Samiksha: "Samiksha Dhaka",
-        Anushka: "Ansuhka Verma",
+        "Samridhi":{
+          id: "Samridhi Jain",
+          label: "Samridhi Jain",
+
+        },
+        "Yash":{
+          id: "Yash Soni",
+          label: "Yash Soni",
+        },
+        "Noopur":{
+          id: "Noopur Kumari",
+          label: "Noopur Kumari",
+        },
+        "Samiksha":{
+          id: "Samiksha Dhaka",
+          label: "Samiksha Dhaka",
+        },
+        "Anushka":{
+          id: "Anushka Verma",
+          label: "Anushka Verma",
+        },
+
+
       },
     },
     topicTitle: {
