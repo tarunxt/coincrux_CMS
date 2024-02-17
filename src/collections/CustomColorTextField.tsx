@@ -49,13 +49,13 @@ const CustomColorTextField: React.FC<FieldProps<string, CustomColorTextFieldProp
             />
 
             {(isInvalidMin || isInvalidMax) && (
-                <p style={{ color: 'red', marginTop: '8px' }}>
+                <p style={{ color: 'red', marginTop: '6px' }}>
                     {isInvalidMin && `Must be at least ${customProps.minValue} characters`}
                     {isInvalidMax && `Must be at most ${customProps.maxValue} characters`}
                 </p>
             )}
 
-            <p style={{ marginTop: '8px' }}>{charCount}/{customProps.maxValue}</p>
+            <p style={{ marginTop: '6px' }}>{charCount}/{customProps.maxValue}</p>
         </>
     );
 }

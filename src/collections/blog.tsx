@@ -8,7 +8,6 @@ type News = {
   coinDescription: string;
   coinHeading: string;
   coinImage: string;
-  createdAt: Date;
   createdBy: string;
   marketsCard: boolean;
   assetName: string;
@@ -16,6 +15,8 @@ type News = {
   category: string[];
   totalDislikes: string[];
   totalLikes: string[];
+  createdAt: Date;
+
 };
 
 
@@ -36,19 +37,18 @@ export const NewsCollection = buildCollection<News>({
   properties: {
       coinHeading: {
         name: "Title",
-        description: "Title should be between 50 and 100 characters",
+        description: "Title should be between 20 and 100 characters",
 
         validation: {
-          requiredMessage: "You must set a price between 50 and 100",
-          max: 150,
-          min: 50,
+          max: 100,
+          min: 20,
           required: true,
           
 
 
         },
         Field: CustomColorTextField,
-        customProps: { minValue: 50, maxValue: 150},
+        customProps: { minValue: 20, maxValue: 100},
 
         disabled: false,
         
@@ -57,16 +57,16 @@ export const NewsCollection = buildCollection<News>({
       },
     coinDescription:buildProperty( {
       name: "Summary",
-      description: "Summary should be between 150 and 500 characters",
+      description: "Summary should be between 100 and 450 characters",
       validation: { 
         required: true , 
 
-        max: 650, 
-        min: 150, 
+        max: 450, 
+        min: 100, 
       },
       dataType: "string",
       Field: CustomColorTextField,
-      customProps: { minValue: 150, maxValue: 650 },
+      customProps: { minValue: 100, maxValue: 450 },
       
     }),
 
@@ -141,11 +141,7 @@ export const NewsCollection = buildCollection<News>({
       name: "Markets Card",
       dataType: "boolean",
     },
-    createdAt: buildProperty({
-      name: "Created on",
-      dataType: "date",
-      autoValue: "on_create",
-    }),
+   
     createdBy: {
       name: "Created By",
       validation: { required: true },
@@ -162,6 +158,7 @@ export const NewsCollection = buildCollection<News>({
       name: "Topic Title",
       dataType: "string",
     },
+    
     totalLikes: {
       name: "Likes",
       dataType: "array",
@@ -176,5 +173,10 @@ export const NewsCollection = buildCollection<News>({
         dataType: "string",
       },
     },
+    createdAt: buildProperty({
+      name: "Created on",
+      dataType: "date",
+      autoValue: "on_create",
+    }),
   },
 });
