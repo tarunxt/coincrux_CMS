@@ -12,7 +12,7 @@ type News = {
   marketsCard: boolean;
   assetName: string;
   topicTitle: string;
-  category: string[];
+  category: { Crypto: string[]; India: string[] };
   totalDislikes: string[];
   totalLikes: string[];
   createdAt: Date;
@@ -72,130 +72,61 @@ export const NewsCollection = buildCollection<News>({
     }),
     
     category: {
-      name: 'Category',
+      name: "Category",
+      dataType: "map",
       validation: { required: true },
-      dataType: "array",
-      of: {
-          dataType: "string",
-          enumValues: {
-  "Banking": {
-    id: "Banking",
-    label: "Banking",
-  },
-  "Economy": {
-    id: "Economy",
-    label: "Economy",
-  },
-  "Environment": {
-    id: "Environment",
-    label: "Environment",
-  },
-  "Industry": {
-    id: "Industry",
-    label: "Industry",
-  },
-  "Infra": {
-    id: "Infra",
-    label: "Infra",
-  },
-  "IPO": {
-    id: "IPO",
-    label: "IPO",
-  },
-  "Markets": {
-    id: "Markets",
-    label: "Markets",
-  },
-  "Politics": {
-    id: "Politics",
-    label: "Politics",
-  },
-  "Science": {
-    id: "Science",
-    label: "Science",
-  },
-  "Sports": {
-    id: "Sports",
-    label: "Sports",
-  },
-  "Stats": {
-    id: "Stats",
-    label: "Stats",
-  },
-  "Wealth": {
-    id: "Wealth",
-    label: "Wealth",
-  },
-  "Bitcoin": {
-    id: "Bitcoin",
-    label: "Bitcoin",
-  },
-  "Ethereum": {
-    id: "Ethereum",
-    label: "Ethereum",
-  },
-  "Analytics": {
-    id: "Analytics",
-    label: "Analytics",
-  },
-  "Exchange": {
-    id: "Exchange",
-    label: "Exchange",
-  },
-  "Metaverse": {
-    id: "Metaverse",
-    label: "Metaverse",
-  },
-  "Blockchain": {
-    id: "Blockchain",
-    label: "Blockchain",
-  },
-  "GameFi": {
-    id: "GameFi",
-    label: "GameFi",
-  },
-  "Finance": {
-    id: "Finance",
-    label: "Finance",
-  },
-  "Others": {
-    id: "Others",
-    label: "Others",
-  },
-  "Mining": {
-    id: "Mining",
-    label: "Mining",
-  },
-  "Security": {
-    id: "Security",
-    label: "Security",
-  },
-  "World": {
-    id: "World",
-    label: "World",
-  },
-  "Legal": {
-    id: "Legal",
-    label: "Legal",
-  },
-  "Altcoins": {
-    id: "Altcoins",
-    label: "Altcoins",
-  }
-}
-
-         
-      },
-  },
-
-      
+      properties: {
+          Crypto: {
+              name: "Crypto",
+              dataType: "array",
+              of: {
+                  dataType: "string",
+                  enumValues: {
+                      "Bitcoin": "Bitcoin",
+                      "Ethereum": "Ethereum",
+                      "Analytics": "Analytics",
+                      "Exchange": "Exchange",
+                      "Altcoins": "Altcoins",
+                      "Metaverse": "Metaverse",
+                      "Blockchain": "Blockchain",
+                      "GameFi": "GameFi",
+                      "Finance": "Finance",
+                      "Others": "Others",
+                      "Mining": "Mining",
+                      "Security": "Security",
+                      "Economy": "Economy", 
+                      "World": "World",
+                      "Legal": "Legal"
 
 
+                  }
+              }
+          },
+          India: {
+              name: "India",
+              dataType: "array",
+              of: {
+                  dataType: "string",
+                  enumValues: {
+                      "Banking": "Banking",
+                      "Economy": "Economy",
+                      "Environment": "Environment",
+                      "Industry": "Industry",
+                      "Infra": "Infra",
+                      "Markets": "Markets",
+                      "IPO": "IPO",
+                      "Politics": "Politics",
+                      "Science": "Science",
+                      "Sports": "Sports",
+                      "Stats": "Stats",
 
+                  }
+              }
+          }
+      }
+  },
 
-  
-  
-
+   
     assetName: buildProperty({
       name: "Asset Name",
       validation: { required: true },
@@ -260,3 +191,25 @@ export const NewsCollection = buildCollection<News>({
     }),
   },
 });
+function PropertyOrBuilder<T>(arg0: {
+  name: string; dataType: string; properties: {
+    Crypto: {
+      name: string; dataType: string; of: {
+        dataType: string; enumValues: {
+          // Define categories for Crypto
+          Banking: string; Economy: string; Environment: string; Industry: string; Infra: string; Markets: string; IPO: string; Politics: string; Science: string; Sports: string; Stats: string; Wealth: string; Bitcoin: string; Ethereum: string; Analytics: string; Exchange: string; Metaverse: string; Blockchain: string; GameFi: string; Finance: string; Others: string; Mining: string; Security: string; Altcoins: string;
+        };
+      };
+    }; India: {
+      name: string; dataType: string; of: {
+        dataType: string; enumValues: {
+          // Define categories for India
+          Banking: string; Economy: string; Environment: string; Industry: string; Infra: string; Markets: string; IPO: string; Politics: string; Science: string; Sports: string; Stats: string; Wealth: string; Others: string; Legal: string;
+        };
+      };
+    };
+  };
+}): import("firecms").PropertyOrBuilder<string, News> {
+  throw new Error("Function not implemented.");
+}
+
