@@ -2,15 +2,17 @@ import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
 import CustomColorTextField from "./CustomColorTextField.tsx";
 
-
-// Define the News type
+    
 type News = {
   coinDescription: string;
   coinHeading: string;
   coinImage: string;
   createdBy: string;
   marketsCard: boolean;
-  assetName: string;
+  assetName: {
+    Exchange: string;
+    Asset: string;
+  };
   topicTitle: string;
   category: { Crypto: string[]; India: string[] };
   totalDislikes: string[];
@@ -18,6 +20,7 @@ type News = {
   createdAt: Date;
 
 };
+
 
 
 
@@ -50,15 +53,15 @@ export const NewsCollection = buildCollection<News>({
       },
     coinDescription:buildProperty( {
       name: "Summary",
-      description: "Summary should be between 100 and 450 characters",
+      description: "Summary should be between 100 and 400 characters",
       validation: { 
         required: true , 
-        max: 450, 
+        max: 400, 
         min: 100, 
       },
       dataType: "string",
       Field: CustomColorTextField,
-      customProps: { minValue: 100, maxValue: 450 }, 
+      customProps: { minValue: 100, maxValue: 400 }, 
     }),
 
     coinImage: buildProperty({
@@ -126,16 +129,34 @@ export const NewsCollection = buildCollection<News>({
       }
   },
 
-   
-    assetName: buildProperty({
-      name: "Asset Name",
-      validation: { required: true },
-      dataType: "string",
-    }),
-    marketsCard: {
-      name: "Markets Card",
-      dataType: "boolean",
+  marketsCard: {
+    name: "Markets Card",
+    dataType: "boolean",
+  },
+
+  assetName:{
+    name: "Asset Name",
+    validation: { required: true },
+    dataType: "map",
+    properties: {
+      Exchange: {
+        name: "Exchange",
+        dataType: "string",
+        enumValues: {
+          "BINANCE": "Binance",
+          "NASDAQ": "Nasdaq",
+          "NSE": "NSE"
+        }
+      },
+      Asset: {
+        name: "Asset",
+        dataType: "string"
+      }
     },
+  },
+  
+
+ 
    
     createdBy: {
       name: "Created By",
@@ -191,25 +212,5 @@ export const NewsCollection = buildCollection<News>({
     }),
   },
 });
-function PropertyOrBuilder<T>(arg0: {
-  name: string; dataType: string; properties: {
-    Crypto: {
-      name: string; dataType: string; of: {
-        dataType: string; enumValues: {
-          // Define categories for Crypto
-          Banking: string; Economy: string; Environment: string; Industry: string; Infra: string; Markets: string; IPO: string; Politics: string; Science: string; Sports: string; Stats: string; Wealth: string; Bitcoin: string; Ethereum: string; Analytics: string; Exchange: string; Metaverse: string; Blockchain: string; GameFi: string; Finance: string; Others: string; Mining: string; Security: string; Altcoins: string;
-        };
-      };
-    }; India: {
-      name: string; dataType: string; of: {
-        dataType: string; enumValues: {
-          // Define categories for India
-          Banking: string; Economy: string; Environment: string; Industry: string; Infra: string; Markets: string; IPO: string; Politics: string; Science: string; Sports: string; Stats: string; Wealth: string; Others: string; Legal: string;
-        };
-      };
-    };
-  };
-}): import("firecms").PropertyOrBuilder<string, News> {
-  throw new Error("Function not implemented.");
-}
+
 
