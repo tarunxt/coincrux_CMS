@@ -143,14 +143,15 @@ export const NewsCollection = buildCollection<News>({
         name: "Exchange",
         dataType: "string",
         enumValues: {
-          "BINANCE": "Binance",
-          "NASDAQ": "Nasdaq",
-          "NSE": "NSE"
+          "BINANCE": "BINANCE",
+          "NASDAQ": "NASDAQ",
+          "NSE": "NSE",
         }
       },
       Asset: {
         name: "Asset",
         dataType: "string"
+        
       }
     },
   },
