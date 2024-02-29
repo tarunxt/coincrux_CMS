@@ -2,6 +2,9 @@ import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
 import CustomColorTextField from "./CustomColorTextField.tsx";
 
+import { Select } from "@mui/material";
+import AssetSelect from "./AssetSelectProps.tsx";
+
     
 type News = {
   coinDescription: string;
@@ -20,7 +23,6 @@ type News = {
   createdAt: Date;
 
 };
-
 
 
 
@@ -150,9 +152,9 @@ export const NewsCollection = buildCollection<News>({
       },
       Asset: {
         name: "Asset",
-        dataType: "string"
-        
-      }
+        dataType: "string",
+        Field: AssetSelect,
+      },
     },
   },
   
