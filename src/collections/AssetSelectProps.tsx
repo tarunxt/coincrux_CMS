@@ -35,8 +35,6 @@ const AssetSelect: React.FC<FieldProps<string, Option>> = ({
             seen.add(option.value);
           }
         });
-
-        // Set the options for the dropdown
         setOptions(uniqueOptions);
       })
       .catch(error => {
@@ -50,7 +48,6 @@ const AssetSelect: React.FC<FieldProps<string, Option>> = ({
       setValue(null);
       setSelectedLabel("");
       setShowList(true); 
-
     }
     else{
       setValue(inputValue);
