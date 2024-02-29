@@ -2,9 +2,7 @@
   "name": "firecms-starter",
   "private": true,
   "version": "0.0.0",
-  "resolutions": {
-    "react-virtualized": "git+https://github.com/remorses/react-virtualized-fixed-import.git#9.22.3"
-  },
+  
   "type": "module",
   "scripts": {
     "dev": "vite",
