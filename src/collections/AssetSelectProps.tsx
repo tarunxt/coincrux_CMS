@@ -24,7 +24,8 @@ const AssetSelect: React.FC<FieldProps<string, Option>> = ({
 
   const fetchOptions = () => {
     // fetch('https://script.google.com/macros/s/AKfycbzEUQ0denCrLSCNImhiDLqf8d3K6cd3LKh7Ste-Vt2K_7tfeyVt-QXhtOjAloCFYoyWZg/exec')
-    fetch('https://script.google.com/macros/s/AKfycbwW6F-Gqc1z4n17d19BfpuISRl9CehyMqGhr4r-C095cCUK9mlGl1_vl8peOqw9RlXDAg/exec')
+    // fetch('https://script.google.com/macros/s/AKfycbwW6F-Gqc1z4n17d19BfpuISRl9CehyMqGhr4r-C095cCUK9mlGl1_vl8peOqw9RlXDAg/exec')
+    fetch ('https://script.google.com/macros/s/AKfycbx41PQfs76I3u3GbQYQb3rPyUWeYFF3ywhSOvMrOFITkN9guFTAUVTgfVNWvJ5rVcyQxw/exec')
       .then(response => response.json())
       .then(data => {
         // Remove duplicate entries
