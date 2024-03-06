@@ -11,7 +11,6 @@ type News = {
   coinHeading: string;
   coinImage: string;
   createdBy: string;
-  marketsCard: boolean;
   assetName: {
     Exchange: string;
     Asset: string;
@@ -101,7 +100,9 @@ export const NewsCollection = buildCollection<News>({
                       "Security": "Security",
                       "Economy": "Economy", 
                       "World": "World",
-                      "Legal": "Legal"
+                      "Legal": "Legal",
+                      "Markets": "Markets",
+
 
 
                   }
@@ -131,10 +132,7 @@ export const NewsCollection = buildCollection<News>({
       }
   },
 
-  marketsCard: {
-    name: "Markets Card",
-    dataType: "boolean",
-  },
+
 
   assetName:{
     name: "Asset Name",
