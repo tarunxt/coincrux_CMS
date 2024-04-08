@@ -20,6 +20,7 @@ type News = {
   totalDislikes: string[];
   totalLikes: string[];
   createdAt: Date;
+  sourceUrl: string;
 
 };
 
@@ -211,6 +212,11 @@ export const NewsCollection = buildCollection<News>({
       dataType: "date",
       autoValue: "on_create",
     }),
+
+    sourceUrl: {
+      name: "Source URL",
+      dataType: "string",
+    },
   },
 });
 
