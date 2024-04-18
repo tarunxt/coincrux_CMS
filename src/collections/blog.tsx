@@ -21,6 +21,7 @@ type News = {
   totalLikes: string[];
   createdAt: Date;
   sourceUrl: string;
+  sourceName: string;
 
 };
 
@@ -217,6 +218,11 @@ export const NewsCollection = buildCollection<News>({
       name: "Source URL",
       dataType: "string",
     },
+
+    sourceName:{
+      name: "Source Name",
+      dataType: "string"
+    }
   },
 });
 
