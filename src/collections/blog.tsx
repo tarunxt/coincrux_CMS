@@ -157,7 +157,17 @@ export const NewsCollection = buildCollection<News>({
       },
     },
   },
-  
+  sourceUrl: {
+    validation: { required: true },
+    name: "Source URL",
+    dataType: "string",
+  },
+
+  sourceName:{
+    validation: { required: true },
+    name: "Source Name",
+    dataType: "string"
+  },
 
  
    
@@ -190,6 +200,8 @@ export const NewsCollection = buildCollection<News>({
 
       },
     },
+
+
     topicTitle: {
       name: "Topic Title",
       dataType: "string",
@@ -215,15 +227,7 @@ export const NewsCollection = buildCollection<News>({
       autoValue: "on_create",
     }),
 
-    sourceUrl: {
-      name: "Source URL",
-      dataType: "string",
-    },
-
-    sourceName:{
-      name: "Source Name",
-      dataType: "string"
-    }
+    
   },
 });
 
