@@ -175,15 +175,16 @@ export const NewsCollection = buildCollection<News>({
           id: "Samiksha Dhaka",
           label: "Samiksha Dhaka",
         },
-        "Noopur":{
-          id: "Noopur Kumari",
-          label: "Noopur Kumari",
+        "Vaibhav":{
+          id: "Vaibhav Yadav",
+          label: "Vaibhav Yadav",
+        },
+        "Praneeth Kumar":{
+          id: "Praneeth Kumar",
+          label: "Praneeth Kumar",
         },
        
-       "Riya":{
-          id: "Riya Singh",
-          label: "Riya Singh",
-       }
+       
        
 
 
