@@ -148,17 +148,13 @@ export const NewsCollection = buildCollection<News>({
           "BINANCE": "BINANCE",
           "NASDAQ": "NASDAQ",
           "NSE": "NSE",
+          "NONE":"NONE"
         }
       },
       Asset: {
         name: "Asset",
-        dataType: "map",
-        //Field: AssetSelect,
-
-        enumValues: {
-          "Apple": "AAPL",
-        }
-        
+        dataType: "string",
+        Field: AssetSelect,
       },
     },
   },
