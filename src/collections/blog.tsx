@@ -152,8 +152,13 @@ export const NewsCollection = buildCollection<News>({
       },
       Asset: {
         name: "Asset",
-        dataType: "string",
-        Field: AssetSelect,
+        dataType: "map",
+        //Field: AssetSelect,
+
+        enumValues: {
+          "Apple": "AAPL",
+        }
+        
       },
     },
   },
