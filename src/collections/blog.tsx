@@ -138,13 +138,18 @@ export const NewsCollection = buildCollection<News>({
 
   assetName:{
     name: "Asset Name",
+    //validation: { required: true },
     validation: { required: true },
     dataType: "map",
     properties: {
       Exchange: {
+      
         name: "Exchange",
+        validation: { required: true },
         dataType: "string",
+      
         enumValues: {
+          
           "BINANCE": "BINANCE",
           "NASDAQ": "NASDAQ",
           "NSE": "NSE",
@@ -152,6 +157,7 @@ export const NewsCollection = buildCollection<News>({
         }
       },
       Asset: {
+      
         name: "Asset",
         dataType: "string",
         Field: AssetSelect,
