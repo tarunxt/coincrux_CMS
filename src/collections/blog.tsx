@@ -183,10 +183,18 @@ export const NewsCollection = buildCollection<News>({
       validation: { required: true },
       dataType: "string",
       enumValues: {
-       
-        "Yash":{
-          id: "Yash Soni",
-          label: "Yash Soni",
+
+        "Deepshikha":{
+          id: "Deepshikha",
+          label: "Deepshikha",
+        },
+        "Gaurav Srivastava":{
+          id: "Gaurav Srivastava",
+          label: "Gaurav Srivastava",
+        },
+        "Md Imran Khan":{
+          id: "Md Imran Khan",
+          label: "Md Imran Khan",
         },
         "Samiksha":{
           id: "Samiksha Dhaka",
@@ -196,10 +204,19 @@ export const NewsCollection = buildCollection<News>({
           id: "Vaibhav Yadav",
           label: "Vaibhav Yadav",
         },
-        "Praneeth Kumar":{
-          id: "Praneeth Kumar",
-          label: "Praneeth Kumar",
+        "Yash":{
+          id: "Yash Soni",
+          label: "Yash Soni",
         },
+        
+        
+        
+        
+        
+        
+
+
+
        
        
        
