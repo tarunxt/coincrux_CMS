@@ -150,13 +150,14 @@ export const NewsCollection = buildCollection<News>({
       
         enumValues: {
           
-          "BINANCE": "BINANCE",
+          "CRYPTOCAP": "CRYPTOCAP",
           "NASDAQ": "NASDAQ",
           "NSE": "NSE",
           "NONE":"NONE"
         }
       },
       Asset: {
+
       
         name: "Asset",
         dataType: "string",
