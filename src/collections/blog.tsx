@@ -88,6 +88,7 @@ export const NewsCollection = buildCollection<News>({
               of: {
                   dataType: "string",
                   enumValues: {
+                      "Top Picks":"Top Picks",
                       "Bitcoin": "Bitcoin",
                       "Ethereum": "Ethereum",
                       "Analytics": "Analytics",
@@ -116,6 +117,7 @@ export const NewsCollection = buildCollection<News>({
               of: {
                   dataType: "string",
                   enumValues: {
+                      "Top Picks":"Top Picks",
                       "Banking": "Banking",
                       "Economy": "Economy",
                       "Environment": "Environment",
