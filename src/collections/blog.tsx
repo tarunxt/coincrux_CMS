@@ -91,22 +91,24 @@ export const NewsCollection = buildCollection<News>({
                       "Top Picks":"Top Picks",
                       "Bitcoin": "Bitcoin",
                       "Ethereum": "Ethereum",
-                      "Analytics": "Analytics",
-                      "Exchange": "Exchange",
+                      "Business":"Business",
+                 
+                  
                       "Altcoins": "Altcoins",
-                      "Metaverse": "Metaverse",
-                      "Blockchain": "Blockchain",
-                      "GameFi": "GameFi",
-                      "Finance": "Finance",
-                      "Others": "Others",
-                      "Mining": "Mining",
-                      "Security": "Security",
-                      "Economy": "Economy", 
-                      "World": "World",
-                      "Legal": "Legal",
                       "Markets": "Markets",
-
-
+                     
+                      "Blockchain": "Blockchain",
+                      "DeFi": "DeFi",
+                      "Exchange": "Exchange",
+                      
+                      "Metaverse": "Metaverse",
+                      "Mining": "Mining",
+                      "NFTs":"NFTs",
+                      "Regulation":"Regulation",
+                      "Security": "Security",
+                      "ICO":"ICO",
+               
+                      "Others": "Others",
 
                   }
               }
@@ -120,19 +122,42 @@ export const NewsCollection = buildCollection<News>({
                       "Top Picks":"Top Picks",
                       "Banking": "Banking",
                       "Economy": "Economy",
-                      "Environment": "Environment",
+           
                       "Industry": "Industry",
                       "Infra": "Infra",
                       "Markets": "Markets",
                       "IPO": "IPO",
                       "Politics": "Politics",
-                      "Science": "Science",
+                      "Science & Tech": "Science & Tech",
                       "Sports": "Sports",
-                      "Stats": "Stats",
+                      "Startups": "Startups",
+                      "Geopolitics":"Geopolicts",
+                      "Business":"Business",
+                      "Others":"Others"
 
                   }
               }
-          }
+          },
+          World: {
+            name: "World",
+            dataType: "array",
+            of: {
+                dataType: "string",
+                enumValues: {
+                  "Business":"Business",
+                    "Economy": "Economy",
+                    
+                    "Markets": "Markets",
+                  
+                    "Politics": "Politics",
+                    "Science & Tech": "Science & Tech",
+
+                    "Sports": "Sports",
+                    "Others": "Others",
+
+                }
+            }
+        }
       }
   },
 
