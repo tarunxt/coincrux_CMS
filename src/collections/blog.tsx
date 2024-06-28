@@ -16,7 +16,7 @@ type News = {
     Asset: string;
   };
   topicTitle: string;
-  category: { Crypto: string[]; India: string[] };
+  category: { Crypto: string[]; India: string[], World:string[] };
   totalDislikes: string[];
   totalLikes: string[];
   createdAt: Date;
