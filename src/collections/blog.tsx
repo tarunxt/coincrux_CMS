@@ -15,14 +15,11 @@ type News = {
     Exchange: string;
     Asset: string;
   };
-  topicTitle: string;
+  
   category: { Crypto: string[]; India: string[], World:string[] };
-  totalDislikes: string[];
-  totalLikes: string[];
   createdAt: Date;
   sourceUrl: string;
   sourceName: string;
-
 };
 
 
@@ -203,83 +200,38 @@ export const NewsCollection = buildCollection<News>({
     name: "Source Name",
     dataType: "string"
   },
-
- 
-   
     createdBy: {
       name: "Created By",
       validation: { required: true },
       dataType: "string",
       enumValues: {
 
-        "Deepshikha":{
-          id: "Deepshikha",
-          label: "Deepshikha",
-        },
-        "Gaurav Srivastava":{
-          id: "Gaurav Srivastava",
-          label: "Gaurav Srivastava",
+        "Hrithik":{
+          id:"Hrithik",
+          label:"Hrithik"
+
         },
         "Md Imran Khan":{
           id: "Md Imran Khan",
           label: "Md Imran Khan",
         },
-        "Samiksha":{
-          id: "Samiksha Dhaka",
-          label: "Samiksha Dhaka",
-        },
+        
         "Vaibhav":{
           id: "Vaibhav Yadav",
           label: "Vaibhav Yadav",
         },
-        "Yash":{
-          id: "Yash Soni",
-          label: "Yash Soni",
-        },
-        
-        
-        
-        
-        
-        
+       "Vipasyana Bhanu":{
+        id:"Vipasyana Bhanu",
+        label:"Vipasyana Bhanu"
+       }
 
-
-
-       
-       
-       
-
-
-      },
-    },
-
-
-    topicTitle: {
-      name: "Topic Title",
-      dataType: "string",
-    },
-    
-    totalLikes: {
-      name: "Likes",
-      dataType: "array",
-      of: {
-        dataType: "string",
-      },
-    },
-    totalDislikes: {
-      name: "Dislikes",
-      dataType: "array",
-      of: {
-        dataType: "string",
       },
     },
     createdAt: buildProperty({
       name: "Created on",
       dataType: "date",
       autoValue: "on_create",
-    }),
-
-    
+    }),    
   },
 });
 
