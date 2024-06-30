@@ -1,8 +1,7 @@
 import { buildCollection, buildProperty } from "firecms";
 import { localeCollection } from "./locales.tsx";
 import CustomColorTextField from "./CustomColorTextField.tsx";
-import moment from 'moment';
-moment().format(); 
+
 import { Select } from "@mui/material";
 import AssetSelect from "./AssetSelectProps.tsx";
 
@@ -229,10 +228,9 @@ export const NewsCollection = buildCollection<News>({
       },
     },
     createdAt: buildProperty({
-      name: "Created At",
+      name: "Created on",
       dataType: "date",
-      autoValue: moment().subtract(30, 'days'),
-      //autoValue: "on_create",
+      autoValue: "on_create",
     }),    
   },
 });
