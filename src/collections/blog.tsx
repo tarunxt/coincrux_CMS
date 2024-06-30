@@ -229,7 +229,7 @@ export const NewsCollection = buildCollection<News>({
       },
     },
     createdAt: buildProperty({
-      name: "Created on",
+      name: "Created At",
       dataType: "date",
       autoValue: moment().subtract(30, 'days'),
       //autoValue: "on_create",
