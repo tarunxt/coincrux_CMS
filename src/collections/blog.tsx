@@ -176,7 +176,7 @@ export const NewsCollection = buildCollection<News>({
           
           "CRYPTOCAP": "CRYPTOCAP",
           "NASDAQ": "NASDAQ",
-          "NSE": "NSE",
+          "BSE": "BSE",
           "NONE":"NONE"
         }
       },
