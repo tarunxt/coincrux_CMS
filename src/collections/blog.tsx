@@ -27,8 +27,9 @@ export const imageUrlField: AdditionalFieldDelegate<News> = {
   id: "image url",
   name: "image url",
   builder: ({ entity }) => {
+
       let values = entity.values;
-      return FirebaseStorage.instance.ref.child(values.coinImage).getDownloadURL;
+      return FirebaseStorage().instance.ref.child(values.coinImage).getDownloadURL;
   },
   dependencies: ["coinImage"]
 };
