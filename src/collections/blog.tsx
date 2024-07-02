@@ -1,7 +1,7 @@
-import { buildCollection, buildProperty } from "firecms";
+import { buildCollection, buildProperty, AdditionalFieldDelegate } from "firecms";
 import { localeCollection } from "./locales.tsx";
 import CustomColorTextField from "./CustomColorTextField.tsx";
-
+import { FirebaseStorage } from "firebase/storage";
 import { Select } from "@mui/material";
 import AssetSelect from "./AssetSelectProps.tsx";
 
@@ -23,6 +23,15 @@ type News = {
 };
 
 
+export const imageUrlField: AdditionalFieldDelegate<News> = {
+  id: "image url",
+  name: "image url",
+  builder: ({ entity }) => {
+      let values = entity.values;
+      return FirebaseStorage.instance.ref.child(values.coinImage).getDownloadURL;
+  },
+  dependencies: ["coinImage"]
+};
 
 export const NewsCollection = buildCollection<News>({
   name: "News",
@@ -233,6 +242,11 @@ export const NewsCollection = buildCollection<News>({
       autoValue: "on_create",
     }),    
   },
+
+
+  additionalFields: [
+    imageUrlField
+]
 });
 
 
