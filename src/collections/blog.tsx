@@ -19,6 +19,7 @@ type News = {
   createdAt: Date;
   sourceUrl: string;
   sourceName: string;
+  location: string;
 };
 
 
@@ -197,6 +198,11 @@ export const NewsCollection = buildCollection<News>({
   sourceName:{
     validation: { required: true },
     name: "Source Name",
+    dataType: "string"
+  },
+  location:{
+    
+    name: "Location",
     dataType: "string"
   },
     createdBy: {
