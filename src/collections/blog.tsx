@@ -202,7 +202,7 @@ export const NewsCollection = buildCollection<News>({
   },
   location:{
     
-    name: "Location",
+    name: "location",
     dataType: "string"
   },
     createdBy: {
