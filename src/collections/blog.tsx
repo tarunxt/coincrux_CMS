@@ -5,6 +5,8 @@ import CustomColorTextField from "./CustomColorTextField.tsx";
 import { Select } from "@mui/material";
 import AssetSelect from "./AssetSelectProps.tsx";
 
+
+
 type News = {
   coinDescription: string;
   coinHeading: string;
@@ -202,7 +204,7 @@ export const NewsCollection = buildCollection<News>({
   },
   location:{
     
-    name: "location",
+    name: "Location Name",
     dataType: "string"
   },
     createdBy: {
@@ -210,10 +212,24 @@ export const NewsCollection = buildCollection<News>({
       validation: { required: true },
       dataType: "string",
       enumValues: {
+        "⁠Anishka Singh":{
+          id:"⁠Anishka Singh",
+          label:"⁠Anishka Singh"
 
-        "Hrithik":{
-          id:"Hrithik",
-          label:"Hrithik"
+        },
+        "Anuvrat Bhasin":{
+          id:"Anuvrat Bhasin",
+          label:"Anuvrat Bhasin"
+
+        },
+        "Mrityunjay Kar":{
+          id:"Mrityunjay Kar",
+          label:"Mrityunjay Kar"
+
+        },
+        "Shivam":{
+          id:"Shivam Shaurya",
+          label:"Shivam Shaurya"
 
         },
         "Md Imran Khan":{
@@ -229,6 +245,10 @@ export const NewsCollection = buildCollection<News>({
         id:"Vipasyana Bhanu",
         label:"Vipasyana Bhanu"
        }
+
+     
+
+
 
       },
     },
