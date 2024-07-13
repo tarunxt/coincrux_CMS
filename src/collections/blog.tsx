@@ -251,7 +251,14 @@ export const NewsCollection = buildCollection<News>({
       name: "Created on",
       dataType: "date",
       autoValue: "on_create",
-    }),    
+    }),   
+    
+    radio: buildProperty({
+      name: "Send Notification",
+      dataType: "boolean",
+      validation: { required: true },
+    }),
+
   },
 
 
