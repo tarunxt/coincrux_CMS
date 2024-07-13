@@ -217,16 +217,7 @@ export const NewsCollection = buildCollection<News>({
           label:"⁠Anishka Singh"
 
         },
-        "Anuvrat Bhasin":{
-          id:"Anuvrat Bhasin",
-          label:"Anuvrat Bhasin"
-
-        },
-        "Mrityunjay Kar":{
-          id:"Mrityunjay Kar",
-          label:"Mrityunjay Kar"
-
-        },
+        
         "Shivam":{
           id:"Shivam Shaurya",
           label:"Shivam Shaurya"
@@ -244,6 +235,10 @@ export const NewsCollection = buildCollection<News>({
        "Vipasyana Bhanu":{
         id:"Vipasyana Bhanu",
         label:"Vipasyana Bhanu"
+       },
+       "Garima Shaw":{
+        id:"Garime Shaw",
+        label:"Garima Shaw"
        }
 
      
