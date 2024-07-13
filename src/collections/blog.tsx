@@ -22,6 +22,7 @@ type News = {
   sourceUrl: string;
   sourceName: string;
   location: string;
+  radio: boolean; // Add the new radio field
 };
 
 
