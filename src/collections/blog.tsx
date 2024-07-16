@@ -213,9 +213,9 @@ export const NewsCollection = buildCollection<News>({
       validation: { required: true },
       dataType: "string",
       enumValues: {
-        "⁠Anishka Singh":{
-          id:"⁠Anishka Singh",
-          label:"⁠Anishka Singh"
+        "⁠Anushka Singh":{
+          id:"⁠Anushka Singh",
+          label:"⁠Anushka Singh"
 
         },
         
