@@ -119,7 +119,7 @@ export const NewsCollection = buildCollection<News>({
               of: {
                   dataType: "string",
                   enumValues: {
-                      "Top Picks":"Top Picks",
+                      "ET Daily":"ET Daily",
                       "Banking": "Banking",
                       "Economy": "Economy",
            
