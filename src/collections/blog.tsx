@@ -233,10 +233,10 @@ export const NewsCollection = buildCollection<News>({
           id: "Vaibhav Yadav",
           label: "Vaibhav Yadav",
         },
-       "Vipasyana Bhanu":{
-        id:"Vipasyana Bhanu",
-        label:"Vipasyana Bhanu"
-       },
+      //  "Vipasyana Bhanu":{
+      //   id:"Vipasyana Bhanu",
+      //   label:"Vipasyana Bhanu"
+      //  },
        "Garima Shaw":{
         id:"Garima Shaw",
         label:"Garima Shaw"
