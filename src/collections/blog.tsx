@@ -213,39 +213,15 @@ export const NewsCollection = buildCollection<News>({
       validation: { required: true },
       dataType: "string",
       enumValues: {
-        "⁠Anushka Singh":{
-          id:"⁠Anushka Singh",
-          label:"⁠Anushka Singh"
-
-        },
-        
-        "Shivam":{
-          id:"Shivam Shaurya",
-          label:"Shivam Shaurya"
-
-        },
         "Md Imran Khan":{
           id: "Md Imran Khan",
           label: "Md Imran Khan",
         },
-        
-        "Vaibhav":{
-          id: "Vaibhav Yadav",
-          label: "Vaibhav Yadav",
-        },
-      //  "Vipasyana Bhanu":{
-      //   id:"Vipasyana Bhanu",
-      //   label:"Vipasyana Bhanu"
-      //  },
+      
        "Garima Shaw":{
         id:"Garima Shaw",
         label:"Garima Shaw"
        }
-
-     
-
-
-
       },
     },
     createdAt: buildProperty({
